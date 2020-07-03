@@ -20,12 +20,12 @@ from principal import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('articulos', views.articulos, name="Articulos"),
-    path('blog', views.blog, name="Blog"),
-    path('contacto', views.contacto, name="Contacto"),
-    path('empleos', views.empleos, name="Empleos"),
-    path('login', views.login, name="Login"),
-    path('', views.inicio, name="Inicio"),
-    path('registro/', include('registro.urls')),
-    path('servicios', views.servicios, name="Servicios"),
+    path('articulos', include('articulos.urls')),
+    path('blog', include('blog.urls')),
+    path('contacto', include('contacto.urls')),
+    path('empleos', include('empleos.urls')),
+    path('login', include('login.urls')),
+    path('principal', include('principal.urls')),
+    path('registro', include('registro.urls')),
+    path('servicios', include('servicios.urls')),
 ]

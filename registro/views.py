@@ -3,5 +3,5 @@ from registro.forms import FrmRegistro
 
 # Create your views here.
 
-def reg(request):
+def registro(request):
     return HttpResponse("Registro")
