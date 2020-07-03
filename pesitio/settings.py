@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'empleos',
     'login',
     'principal',
-    'registro',
+    'registrar',
     'servicios',
 ]
 
