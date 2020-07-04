@@ -56,13 +56,27 @@
           <li class="nav-item {% if request.path == '/contacto' %}active{% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'Contacto' %}">Contacto</a>
           </li>
-        </ul>
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item {% if request.path == '/login' %}active{% endif %} justify-content-end">
-            <a class="nav-link text-uppercase text-expanded justify-content-end" href="{% url 'Login' %}">Login</a>
+          {% if user.is_authenticated %}
+          <li class="nav-item {% if request.path == '/registrar' %}active{% endif %} px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'Registrar' %}">Registrar</a>
           </li>
-      </ul>
-    </div>
+          {% endif %}
+        </ul>
+        <ul class="navbar-nav mx-auto justify-content-end">
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link text-expanded" href="{% url 'logout' %}">Cerrar</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link text-expanded " href="#">   Usuario : {{ user.username }}</a>
+          </li>
+          {% else %}
+          <li class="nav-item {% if request.path == '/cuenta/login' %}active{% endif %}">
+            <a class="nav-link text-expanded justify-content-end" href="{% url 'login' %}">Conectarse</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
     </div>
   </nav>
 
