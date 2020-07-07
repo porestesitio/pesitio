@@ -6,11 +6,11 @@
 
 {% block content %}
 <br>
-<div class="container p-3 mb-2 bg-success text-white w-25 p-3 rounded" >
-<h1>Autenticación</h1>
+<div class="container p-3 mb-2 w-25 p-3 rounded entrada" >
+<h1 class='text-center'>Autenticación</h1>
 
-<form action="" method="POST">
-    <table>
+<form action="" method="POST"> 
+    <table style="color: gray;">
     {% csrf_token %}
     {{ form.as_table }}
     </table>

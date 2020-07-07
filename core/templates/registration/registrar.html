@@ -1,0 +1,21 @@
+{% extends "principal/base.html" %}
+
+{% load static %}
+
+{% block title %} Registro {% endblock %}
+
+{% block content %}
+<br>
+<div class="container entrada w-50 rounded" >
+<h1>Registro</h1>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <table style="color: gray;">
+    {{ form.as_table }}
+    </table>
+    <input type="reset" value="Limpiar">
+    <input type="submit" value="Registrar">
+</form>
+</div>
+{% endblock %}

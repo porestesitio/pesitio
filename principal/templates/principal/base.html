@@ -56,23 +56,26 @@
           <li class="nav-item {% if request.path == '/contacto' %}active{% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'Contacto' %}">Contacto</a>
           </li>
-          {% if user.is_authenticated %}
-          <li class="nav-item {% if request.path == '/registrar' %}active{% endif %} px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'Registrar' %}">Registrar</a>
-          </li>
-          {% endif %}
         </ul>
         <ul class="navbar-nav mx-auto justify-content-end">
           {% if user.is_authenticated %}
-          <li class="nav-item">
-            <a class="nav-link text-expanded" href="{% url 'logout' %}">Cerrar</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link text-expanded " href="#">   Usuario : {{ user.username }}</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ user.username }}</a>
+            <div class="dropdown-menu">
+              <span style="color: black; font-style: italic;">Agregar</span>
+              <a class="dropdown-item" href="#">Empleo</a>
+              <a class="dropdown-item" href="#">Artículo</a>
+              <a class="dropdown-item" href="#">Servicio</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'logout' %}">Cerrar</a>
+            </div>
           </li>
           {% else %}
           <li class="nav-item {% if request.path == '/cuenta/login' %}active{% endif %}">
             <a class="nav-link text-expanded justify-content-end" href="{% url 'login' %}">Conectarse</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link text-expanded justify-content-end" href="{% url 'registro_usuario' %}">Registrarse</a>
           </li>
           {% endif %}
         </ul>

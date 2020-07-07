@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from core.views import registro_usuario
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,7 +27,7 @@ urlpatterns = [
     path('empleos', include('empleos.urls')),
     path('entrada', include('entrada.urls')),
     path('', include('principal.urls')),
-    path('registrar', include('registrar.urls')),
     path('servicios', include('servicios.urls')),
     path('cuenta/',include('django.contrib.auth.urls')),
+    path('registro/',registro_usuario, name='registro_usuario'),
 ]
