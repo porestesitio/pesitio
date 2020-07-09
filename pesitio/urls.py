@@ -21,7 +21,7 @@ from core.views import registro_usuario
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('articulos', include('articulos.urls')),
+    path('arts', include('articulos.urls')),
     path('blog', include('blog.urls')),
     path('contacto', include('contacto.urls')),
     path('empleos', include('empleos.urls')),
@@ -31,3 +31,7 @@ urlpatterns = [
     path('cuenta/',include('django.contrib.auth.urls')),
     path('registro/',registro_usuario, name='registro_usuario'),
 ]
+
+
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -21,3 +21,4 @@ class CustomUserForm(UserCreationForm):
             'password1':'Contraseña',
             'password2':'Confirma',
         }
+
