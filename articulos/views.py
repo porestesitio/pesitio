@@ -1,25 +1,25 @@
 from django.shortcuts import render, HttpResponse
 # from .models import Articulos, Familia, Medida
-# from .forms import ArticuloForm
+from .forms import ArticuloForm
 
 # Create your views here.
 
 def varticulos(request):
     return render(request, "articulos/index.html")
 
-# def vnuevo(request):
-#     data = {
-#         'form': ArticuloForm()
-#     }
-# 
-#     if request.method == 'POST':
-#         formulario = ArticuloForm(request.POST, files=request.FILES)
-#         if formulario.is_valid():
-#             formulario.save()
-#             data['mensaje'] = 'Guardado correctamente'
-#         data['form'] = formulario
-#     
-#     return render(request, 'articulo/nuevo.html')
+def vnuevo(request):
+    data = {
+        'form': ArticuloForm()
+    }
+
+    if request.method == 'POST':
+        formulario = ArticuloForm(request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data['mensaje'] = 'Guardado correctamente'
+        data['form'] = formulario
+    
+    return render(request, 'articulos/nuevo.html', data)
 
 #def vedita(request, id):
 #    articulo = Articulos.objects.get(id=id)

@@ -4,5 +4,5 @@ from contacto import views
 
 
 urlpatterns = [
-    path('', views.contacto, name="Contacto"),
+    path('', views.contacto, name="Cont"),
 ]

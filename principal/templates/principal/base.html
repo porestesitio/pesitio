@@ -45,16 +45,16 @@
             <a class="nav-link text-uppercase text-expanded" href="{% url 'Arts' %}">Artículos</a>
           </li>
           <li class="nav-item {% if request.path == '/empleos' %}active{% endif %} px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'Empleos' %}">Empleos</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'Empl' %}">Empleos</a>
           </li>
           <li class="nav-item {% if request.path == '/servicios' %}active{% endif %} px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'Servicios' %}">Servicios</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'Serv' %}">Servicios</a>
           </li>
           <li class="nav-item {% if request.path == '/blog' %}active{% endif %} px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'Blog' %}">Blog</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'Blogp' %}">Blog</a>
           </li>
           <li class="nav-item {% if request.path == '/contacto' %}active{% endif %} px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'Contacto' %}">Contacto</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'Cont' %}">Contacto</a>
           </li>
         </ul>
         <ul class="navbar-nav mx-auto justify-content-end">
@@ -64,7 +64,7 @@
             <div class="dropdown-menu">
               <span style="color: black; font-style: italic;">Agregar</span>
               <a class="dropdown-item" href="#">Empleo</a>
-              <a class="dropdown-item" href="#">Artículo</a>
+              <a class="dropdown-item" href="{% url 'ArtNuevo' %}">Artículo</a>
               <a class="dropdown-item" href="#">Servicio</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="{% url 'logout' %}">Cerrar</a>

@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from articulos.models import Articulos
+from .models import Articulos
 
 class ArticuloForm(ModelForm):
 
@@ -20,4 +20,4 @@ class ArticuloForm(ModelForm):
                 'imagen_articulo',
                 'nota_rechazo',
                 'fecha_empieza_publicacion',
-                'fecha_caducidad']
+                'fecha_caducidad',]
