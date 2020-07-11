@@ -20,16 +20,16 @@ from django.conf.urls.static import static
 from core.views import registro_usuario
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('arts/', include('articulos.urls')),
-    path('blog/', include('blog.urls')),
-    path('contacto/', include('contacto.urls')),
-    path('empleos/', include('empleos.urls')),
-    path('entrada/', include('entrada.urls')),
+    path('padmin', admin.site.urls),
+    path('parts/', include('articulos.urls')),
+    path('pblog/', include('blog.urls')),
+    path('pcontacto/', include('contacto.urls')),
+    path('pempleos/', include('empleos.urls')),
+    path('pentrada/', include('entrada.urls')),
     path('', include('principal.urls')),
-    path('servicios/', include('servicios.urls')),
-    path('cuenta/',include('django.contrib.auth.urls')),
-    path('registro/',registro_usuario, name='registro_usuario'),
+    path('pservicios/', include('servicios.urls')),
+    path('pcuenta/',include('django.contrib.auth.urls')),
+    path('pregistro',registro_usuario, name='registro_usuario'), 
 ]
 
 

@@ -5,7 +5,7 @@ from .forms import ArticuloForm
 # Create your views here.
 
 def varticulos(request):
-    return render(request, "articulos/index.html")
+    return render(request, "articulos/lista.html")
 
 def vnuevo(request):
     data = {
@@ -21,17 +21,17 @@ def vnuevo(request):
     
     return render(request, 'articulos/nuevo.html', data)
 
-#def vedita(request, id):
-#    articulo = Articulos.objects.get(id=id)
-#    data = {
-#        'form': ArticuloForm(instance=articulo)
-#    }
+# def vedita(request, id):
+#     articulo = Articulos.objects.get(id=id)
+#     data = {
+#         'form': ArticuloForm(instance=articulo)
+#     }
 
-#    if request.method == 'POST':
-#        formulario = ArticuloForm(request.POST, instance=articulo, files=request.FILES)
-#        if formulario.is_valid():
-#            formulario.save()
-#            data['mensaje'] = 'Modificado correctamente'
- #       data['form'] = ArticuloForm(instance=articulos.objects.get(id=id))
+#     if request.method == 'POST':
+#         formulario = ArticuloForm(request.POST, instance=articulo, files=request.FILES)
+#         if formulario.is_valid():
+#             formulario.save()
+#             data['mensaje'] = 'Modificado correctamente'
+#         data['form'] = ArticuloForm(instance=articulos.objects.get(id=id))
     
- #   return render(request, 'articulo/edita.html')
+#     return render(request, 'articulo/edita.html')

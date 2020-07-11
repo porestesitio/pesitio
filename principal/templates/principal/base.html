@@ -2,80 +2,98 @@
 
 <head>
 
-    {% load static %}
+  {% load static %}
 
-    <title>
+  <title>
     {% block title %} {% endblock %}
-    </title>
+  </title>
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link href="{% static 'principal/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <!-- Bootstrap -->
+  <!-- link href="{% static 'principal/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
 
-     <!-- Fonts -->
+  <!-- Fonts -->
 
-     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
-     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
 
 
-    <!-- Styles -->
-    <link href="{% static 'principal/css/gestion.css' %}" rel="stylesheet">
+  <!-- Styles -->
+  <link href="{% static 'principal/css/gestion.css' %}" rel="stylesheet">
 </head>
 
 <body>
 
-    <h1 class="site-heading text-center text-white d-none d-lg-block">
+  <h1 class="site-heading text-center text-white d-none d-lg-block">
 
-        <span class="site-heading-lower">Por este sitio</span>
-      </h1>
+    <span class="site-heading-lower">Por este sitio</span>
+  </h1>
 
 
- <!-- Navbar -->
- <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
     <div class="container">
-      <!-- a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="{% url 'Principal' %}">Gestión de Pedidos</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button -->
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item {% if request.path == '/' %}active{% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'Principal' %}">Inicio</a>
           </li>
-          <li class="nav-item {% if request.path == '/articulo' %}active{% endif %} px-lg-4">
+          <li class="nav-item {% if request.path == '/parts/' %}active{% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'Arts' %}">Artículos</a>
           </li>
-          <li class="nav-item {% if request.path == '/empleos' %}active{% endif %} px-lg-4">
+          <li class="nav-item {% if request.path == '/pempleos/' %}active{% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'Empl' %}">Empleos</a>
           </li>
-          <li class="nav-item {% if request.path == '/servicios' %}active{% endif %} px-lg-4">
+          <li class="nav-item {% if request.path == '/pservicios/' %}active{% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'Serv' %}">Servicios</a>
           </li>
-          <li class="nav-item {% if request.path == '/blog' %}active{% endif %} px-lg-4">
+          <li class="nav-item {% if request.path == '/pblog/' %}active{% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'Blogp' %}">Blog</a>
           </li>
-          <li class="nav-item {% if request.path == '/contacto' %}active{% endif %} px-lg-4">
+          <li class="nav-item {% if request.path == '/pcontacto/' %}active{% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'Cont' %}">Contacto</a>
           </li>
         </ul>
         <ul class="navbar-nav mx-auto justify-content-end">
           {% if user.is_authenticated %}
           <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Separated link</a>
+            </div>
+          </li>
+        
+
+
+
+
+          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ user.username }}</a>
             <div class="dropdown-menu">
               <span style="color: black; font-style: italic;">Agregar</span>
               <a class="dropdown-item" href="#">Empleo</a>
-              <a class="dropdown-item" href="{% url 'ArtNuevo' %}">Artículo</a>
+              <a class="dropdown-item" href="#">Artículo</a>
               <a class="dropdown-item" href="#">Servicio</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="{% url 'logout' %}">Cerrar</a>
             </div>
           </li>
           {% else %}
-          <li class="nav-item {% if request.path == '/cuenta/login' %}active{% endif %}">
+          <li class="nav-item">
             <a class="nav-link text-expanded justify-content-end" href="{% url 'login' %}">Conectarse</a>
           </li>
           <li class="nav-item ">
@@ -87,44 +105,44 @@
     </div>
   </nav>
 
-   <!-- Heading  y Message Cambiante -->
-    {% block content %} {% endblock %}
+  <!-- Heading  y Message Cambiante -->
+  {% block content %} {% endblock %}
 
-    <!-- Footer -->
-    <footer class="footer text-faded text-center py-5">
-      <div class="container">
-        <p class="m-0">
-	        <a href="#" class="link">
-	          <span class="fa-stack fa-lg">
-	            <i class="fa fa-circle fa-stack-2x"></i>
-	            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-	          </span>
-	        </a>
-	        <a href="#" class="link">
-	          <span class="fa-stack fa-lg">
-	            <i class="fa fa-circle fa-stack-2x"></i>
-	            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-	          </span>
-	        </a>
-	        <a href="#" class="link">
-	          <span class="fa-stack fa-lg">
-	            <i class="fa fa-circle fa-stack-2x"></i>
-	            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-	          </span>
-	        </a>
-	    </p>
-        <p class="m-0 mbt">
-        	<a href="sample.html" class="link">Política de privacidad</a> 
-        	<a href="sample.html" class="link">Aviso legal</a> 
-        	<a href="sample.html" class="link">Cookies</a>
-		</p>
-        <p class="m-0 mbt1">&copy; Gestión de Pedidos 2020</p>
-      </div>
-	</footer>
+  <!-- Footer -->
+  <footer class="footer text-faded text-center py-5">
+    <div class="container">
+      <p class="m-0">
+        <a href="#" class="link">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+        <a href="#" class="link">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+        <a href="#" class="link">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+      </p>
+      <p class="m-0 mbt">
+        <a href="sample.html" class="link">Política de privacidad</a>
+        <a href="sample.html" class="link">Aviso legal</a>
+        <a href="sample.html" class="link">Cookies</a>
+      </p>
+      <p class="m-0 mbt1">&copy; Gestión de Pedidos 2020</p>
+    </div>
+  </footer>
 
-    <!-- Bootstrap -->
-    <script src="{% static 'principal/vendor/jquery/jquery.min.js' %}"></script>
-    <script src="{% static 'principal/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <!-- Bootstrap -->
+  <script src="{% static 'principal/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'principal/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
 </body>
 
